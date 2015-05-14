@@ -21,8 +21,8 @@ public final class MurmurHash3 {
 
   /** 128 bits of state */
   public static final class LongPair {
-    long val1;
-    long val2;
+    public long val1;
+    public long val2;
   }
 
   public static final int fmix32(int h) {
