@@ -201,12 +201,10 @@ public final class MurmurHash3 {
         h1 = h1*5+0xe6546b64;
 
         shift -= 32;
+        
         // unfortunately, java won't let you shift 32 bits off, so we need to check for 0
-        if (shift != 0) {
-          k1 = k2 >>> (bits-shift);   // bits used == bits - newshift
-        } else {
-          k1 = 0;
-        }
+        k1 = shift == 0 ? 0 : k2 >>> (bits-shift);
+
         nBytes += 4;
       }
 
