@@ -57,6 +57,7 @@ public final class MurmurHash3 {
 
 
   /** Returns the MurmurHash3_x86_32 hash. */
+  @SuppressWarnings("fallthrough")
   public static int murmurhash3_x86_32(byte[] data, int offset, int len, int seed) {
 
     final int c1 = 0xcc9e2d51;
@@ -236,6 +237,7 @@ public final class MurmurHash3 {
 
 
   /** Returns the MurmurHash3_x64_128 hash, placing the result in "out". */
+  @SuppressWarnings("fallthrough")
   public static void murmurhash3_x64_128(byte[] key, int offset, int len, int seed, LongPair out) {
     // The original algorithm does have a 32 bit unsigned seed.
     // We have to mask to match the behavior of the unsigned types and prevent sign extension.
